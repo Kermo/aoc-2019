@@ -1,5 +1,4 @@
 import collections
-import math
 
 with open("input.txt") as f:
     data = [int(x) for x in f.readline()]
@@ -15,8 +14,7 @@ def digits_multiplied():
         layers.append(data[:pixels_per_layer])
         del data[:pixels_per_layer]
 
-    # part 1:
-    n_zero = 999
+    n_zero = 99999999
     n_zero_current = 0
     layer_with_fewest_0 = []
     for layer in layers:
