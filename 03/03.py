@@ -31,12 +31,15 @@ wireB_pos = trace_wire_pos(wireB)
 
 common_locs = set(wireA_pos).intersection(set(wireB_pos))
 min_mhtn_dists_common = min(int(abs(x.real) + abs(x.imag)) for x in common_locs)
-print("Part 1:", min_mhtn_dists_common)
+
+
 
 
 path_len_to_intersections = []
 for intersection in common_locs:
-    wireA_intersection_len = wireA_pos.index(intersection) + 1  # removed origin
+    wireA_intersection_len = wireA_pos.index(intersection) + 1
     wireB_intersection_len = wireB_pos.index(intersection) + 1
     path_len_to_intersections.append(wireA_intersection_len + wireB_intersection_len)
-print("Part 2:", min(path_len_to_intersections))
+
+print("Part 1: " + str(min_mhtn_dists_common))
+print("Part 2: " + str(min(path_len_to_intersections)))
